@@ -13,9 +13,19 @@ const Select = ({ label, value, onChange, children }) => {
       <InvisibleSelect value={value} onChange={onChange}>
         {children}
       </InvisibleSelect>
+      <IconWrapper>
+        <Icon id='chevron-down'/>
+      </IconWrapper>
     </Wrapper>
   );
 };
+
+const IconWrapper = styled.span`
+  position: absolute;
+  margin: auto 0;
+  right: 16px;
+  top: 9px;
+`;
 
 const Wrapper = styled.span`
   background-color: ${ COLORS.transparentGray15 };
@@ -27,6 +37,8 @@ const Wrapper = styled.span`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+  position: relative;
+  white-space: nowrap;
 
   &:hover {
     color: ${ COLORS.black };
@@ -44,7 +56,7 @@ const InvisibleSelect = styled.select`
   font-size: inherit;
   line-height: inherit;
   margin: 0;
-  padding: 10px 14px;
+  padding: 10px 54px 10px 14px;
   outline: none;
   width: min-content;
 
