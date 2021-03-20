@@ -44,9 +44,19 @@ const Wrapper = styled.div`
   padding: var(--padding);
 `;
 
+const rightRadius = (value) => {
+  if (value <= 96) {
+    return 0
+  } else {
+    return (-96 - value) + 'px'
+  }
+}
+
 const Indicator = styled.div`
   background-color: ${ COLORS.primary };
   border-radius: inherit;
+  border-top-right-radius: ${ prop => rightRadius(prop.value) };
+  border-bottom-right-radius: ${ prop => rightRadius(prop.value) };
   height: 100%;
   width: ${props => props.value}%;
 `;
