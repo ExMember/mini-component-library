@@ -59,6 +59,7 @@ const Wrapper = styled.div`
   border-radius: var(--radius);
   box-shadow: 0 1px 4px 0 ${ COLORS.transparentGray15 } inset;
   height: var(--height);
+  overflow: hidden;
   padding: var(--padding);
 `;
 
