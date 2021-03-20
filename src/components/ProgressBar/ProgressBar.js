@@ -4,12 +4,27 @@ import styled from 'styled-components';
 import { COLORS } from '../../constants';
 import VisuallyHidden from '../VisuallyHidden';
 
+const SIZES = {
+  small: {
+    "--height": 8 + "px",
+  },
+  medium: {
+    "--height": 12 + "px",
+  },
+  large: {
+    "--height": 24 + "px",
+  }
+};
+
 const ProgressBar = ({ value, size }) => {
+  const styles = SIZES[size];
+
   return <Wrapper
     role="progressbar"
     aria-valuenow="{value}"
     aria-valuemin="0"
-    aria-valuemax="100">
+    aria-valuemax="100"
+    style={styles}>
     <Indicator value={value}/>
     <VisuallyHidden>{value} %</VisuallyHidden>
   </Wrapper>;
@@ -20,14 +35,13 @@ const Wrapper = styled.div`
   background-color: ${ COLORS.transparentGray15 };
   border-radius: 4px;
   box-shadow: 0 1px 4px 0 ${ COLORS.transparentGray15 } inset;
-  height: 12px;
+  height: var(--height);
 `;
 
 const Indicator = styled.div`
-  padding: 0;
   background-color: ${ COLORS.primary };
-  border-radius: 4px;
-  height: 13px;
+  border-radius: inherit;
+  height: 100%;
   width: ${props => props.value}%;
 `;
 
