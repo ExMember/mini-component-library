@@ -27,6 +27,10 @@ const Wrapper = styled.span`
   font-weight: normal;
   font-size: 16px;
   line-height: 19px;
+
+  &:hover {
+    color: ${ COLORS.black };
+  }
 `;
 
 const InvisibleSelect = styled.select`
