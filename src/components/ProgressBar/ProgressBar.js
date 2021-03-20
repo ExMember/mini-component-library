@@ -10,7 +10,7 @@ const ProgressBar = ({ value, size }) => {
     aria-valuenow="{value}"
     aria-valuemin="0"
     aria-valuemax="100">
-    {value} %
+    <VisuallyHidden>{value} %</VisuallyHidden>
   </div>;
 };
 
