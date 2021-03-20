@@ -42,7 +42,7 @@ const InvisibleSelect = styled.select`
   margin: 0;
   padding: 12px 16px;
   outline: none;
-  width: auto;
+  width: min-content;
 `;
 
 export default Select;
