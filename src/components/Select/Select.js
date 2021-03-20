@@ -23,6 +23,7 @@ const Select = ({ label, value, onChange, children }) => {
 const IconWrapper = styled.span`
   position: absolute;
   margin: auto 0;
+  pointer-events: none;
   right: 16px;
   top: 9px;
 `;
