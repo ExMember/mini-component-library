@@ -32,7 +32,7 @@ const Wrapper = styled.span`
 const InvisibleSelect = styled.select`
   appearance: none;
   background-color: transparent;
-  border: none;
+  border: 2px solid transparent;
   color: inherit;
   font-family: inherit;
   font-style: inherit;
@@ -40,9 +40,13 @@ const InvisibleSelect = styled.select`
   font-size: inherit;
   line-height: inherit;
   margin: 0;
-  padding: 12px 16px;
+  padding: 10px 14px;
   outline: none;
   width: min-content;
+
+  &:focus {
+    border-color: ${ COLORS.primary };
+  }
 `;
 
 export default Select;
