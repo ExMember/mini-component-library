@@ -12,6 +12,18 @@ const ICON_SIZES = {
   large: 16,
 };
 
+
+const STYLE_SIZES = {
+  small: {
+    "--text": "14px",
+    "--underline": "1px"
+  },
+  large: {
+    "--text": "18px",
+    "--underline": "2px"
+  }
+};
+
 const IconInput = ({
   label,
   icon,
@@ -19,21 +31,23 @@ const IconInput = ({
   size,
   placeholder,
 }) => {
-return <Wrapper>
-  <Label for='{label}'>{label}</Label>
-    <IconWrapper>
-      <Icon id={icon} size={ICON_SIZES[size]}/>
-    </IconWrapper>
-    <Input id='{label}' type='text' placeholder={placeholder}/>
-</Wrapper>;
+  const styles = STYLE_SIZES[size];
+
+  return <Wrapper style={styles}>
+    <Label for='{label}'>{label}</Label>
+      <IconWrapper>
+        <Icon id={icon} size={ICON_SIZES[size]}/>
+      </IconWrapper>
+      <Input id='{label}' type='text' placeholder={placeholder}/>
+  </Wrapper>;
 };
 
 const Wrapper = styled.span`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 1.25;
+  font-size: var(--text);
+  line-height: 1.17;
   position: relative;
 `;
 
@@ -54,7 +68,7 @@ const IconWrapper = styled.span`
 
 const Input = styled.input`
   border: 0;
-  border-bottom: 1px solid ${COLORS.black};
+  border-bottom: var(--underline) solid ${COLORS.black};
   color: ${COLORS.gray700};
   font-weight: bold;
   font-size: inherit;
