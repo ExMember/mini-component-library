@@ -14,21 +14,34 @@ const IconInput = ({
   placeholder,
 }) => {
 return <Wrapper>
-  <Label for="{label}">{label}</Label>
-  <Input id="{label}" type="text" placeholder={placeholder}></Input>
+  <Label for='{label}'>{label}</Label>
+    <IconWrapper>
+      <Icon id={icon}/>
+    </IconWrapper>
+    <Input id='{label}' type='text' placeholder={placeholder}>
+    </Input>
 </Wrapper>;
 };
 
-const Wrapper = styled.div`
+const Wrapper = styled.span`
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
   font-size: 14px;
   line-height: 1.25;
+  position: relative;
 `;
 
 const Label = styled.label`
   display: none;
+`;
+
+const IconWrapper = styled.span`
+  position: absolute;
+  margin: auto 0;
+  pointer-events: none;
+  right: 16px;
+  top: 9px;
 `;
 
 const Input = styled.input`
