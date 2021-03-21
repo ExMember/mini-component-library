@@ -34,11 +34,11 @@ const IconInput = ({
   const styles = STYLE_SIZES[size];
 
   return <Wrapper style={styles}>
-    <Label for='{label}'>{label}</Label>
+    <Label for={label}>{label}</Label>
+      <Input id={label} width={width} type='text' placeholder={placeholder}/>
       <IconWrapper>
         <Icon id={icon} size={ICON_SIZES[size]}/>
       </IconWrapper>
-      <Input id='{label}' width={width} type='text' placeholder={placeholder}/>
   </Wrapper>;
 };
 
@@ -55,17 +55,6 @@ const Label = styled.label`
   display: none;
 `;
 
-const IconWrapper = styled.span`
-  color: ${COLORS.gray500};
-  position: absolute;
-  margin: auto 0;
-  pointer-events: none;
-  top: 0;
-  bottom: 0;
-  left: 3px;
-  height: min-content;
-`;
-
 const Input = styled.input`
   border: 0;
   border-bottom: var(--underline) solid ${COLORS.black};
@@ -77,11 +66,30 @@ const Input = styled.input`
   padding: 8px 2px 7px 36px;
   width: ${ (props) => props.width + 'px' };
 
+  &:hover {
+    color: ${COLORS.black};
+  }
+
   &::placeholder {
     color: ${COLORS.gray500};
     font-weight: normal;
     font-size: inherit;
     line-height: inherit;
+  }
+`;
+
+const IconWrapper = styled.span`
+  color: ${COLORS.gray500};
+  position: absolute;
+  margin: auto 0;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  height: min-content;
+
+  ${Input}:hover + & {
+    color: ${COLORS.black};
   }
 `;
 
