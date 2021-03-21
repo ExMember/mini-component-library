@@ -16,7 +16,7 @@ const IconInput = ({
 return <Wrapper>
   <Label for='{label}'>{label}</Label>
     <IconWrapper>
-      <Icon id={icon}/>
+      <Icon id={icon} size='16'/>
     </IconWrapper>
     <Input id='{label}' type='text' placeholder={placeholder}/>
 </Wrapper>;
@@ -40,16 +40,20 @@ const IconWrapper = styled.span`
   position: absolute;
   margin: auto 0;
   pointer-events: none;
-  left: 0;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  height: min-content;
 `;
 
 const Input = styled.input`
   border: 0;
+  border-bottom: 1px solid ${COLORS.black};
   color: ${COLORS.gray700};
   font-weight: bold;
   font-size: inherit;
   line-height: inherit;
-  padding: 2px 2px 2px 34px;
+  padding: 8px 2px 7px 36px;
 
   &::placeholder {
     color: ${COLORS.gray500};
