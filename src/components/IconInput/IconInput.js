@@ -44,11 +44,12 @@ const IconWrapper = styled.span`
 `;
 
 const Input = styled.input`
+  border: 0;
   color: ${COLORS.gray700};
   font-weight: bold;
   font-size: inherit;
   line-height: inherit;
-  padding-left: 24px;
+  padding: 2px 2px 2px 34px;
 
   &::placeholder {
     color: ${COLORS.gray500};
