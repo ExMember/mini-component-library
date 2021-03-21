@@ -35,10 +35,10 @@ const IconInput = ({
 
   return <Wrapper style={styles}>
     <Label for={label}>{label}</Label>
-      <Input id={label} width={width} type='text' placeholder={placeholder}/>
       <IconWrapper>
         <Icon id={icon} size={ICON_SIZES[size]}/>
       </IconWrapper>
+      <Input id={label} width={width} type='text' placeholder={placeholder}/>
   </Wrapper>;
 };
 
@@ -53,6 +53,21 @@ const Wrapper = styled.span`
 
 const Label = styled.label`
   display: none;
+`;
+
+const IconWrapper = styled.span`
+  color: ${COLORS.gray500};
+  position: absolute;
+  margin: auto 0;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  left: 3px;
+  height: min-content;
+
+  ${Wrapper}:hover > & {
+    color: ${COLORS.black};
+  }
 `;
 
 const Input = styled.input`
@@ -75,21 +90,6 @@ const Input = styled.input`
     font-weight: normal;
     font-size: inherit;
     line-height: inherit;
-  }
-`;
-
-const IconWrapper = styled.span`
-  color: ${COLORS.gray500};
-  position: absolute;
-  margin: auto 0;
-  pointer-events: none;
-  top: 0;
-  bottom: 0;
-  left: 3px;
-  height: min-content;
-
-  ${Input}:hover + & {
-    color: ${COLORS.black};
   }
 `;
 
