@@ -6,6 +6,12 @@ import { COLORS } from '../../constants';
 import Icon from '../Icon';
 import VisuallyHidden from '../VisuallyHidden';
 
+
+const ICON_SIZES = {
+  small: 10.67,
+  large: 16,
+};
+
 const IconInput = ({
   label,
   icon,
@@ -16,7 +22,7 @@ const IconInput = ({
 return <Wrapper>
   <Label for='{label}'>{label}</Label>
     <IconWrapper>
-      <Icon id={icon} size='16'/>
+      <Icon id={icon} size={ICON_SIZES[size]}/>
     </IconWrapper>
     <Input id='{label}' type='text' placeholder={placeholder}/>
 </Wrapper>;
