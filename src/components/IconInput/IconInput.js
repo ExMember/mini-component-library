@@ -73,6 +73,7 @@ const Input = styled.input`
   font-weight: bold;
   font-size: inherit;
   line-height: inherit;
+  outline-offset: 2px;
   padding: 8px 2px 7px 36px;
   width: ${ (props) => props.width + 'px' };
 
