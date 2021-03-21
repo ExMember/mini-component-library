@@ -14,9 +14,13 @@ const IconInput = ({
   placeholder,
 }) => {
 return <div>
-  <label for="{label}">{label}</label>
+  <Label for="{label}">{label}</Label>
   <input id="{label}" type="text" placeholder={placeholder}></input>
 </div>;
 };
+
+const Label = styled.label`
+  display: none;
+`;
 
 export default IconInput;
