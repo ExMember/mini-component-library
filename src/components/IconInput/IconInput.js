@@ -18,8 +18,7 @@ return <Wrapper>
     <IconWrapper>
       <Icon id={icon}/>
     </IconWrapper>
-    <Input id='{label}' type='text' placeholder={placeholder}>
-    </Input>
+    <Input id='{label}' type='text' placeholder={placeholder}/>
 </Wrapper>;
 };
 
@@ -37,11 +36,11 @@ const Label = styled.label`
 `;
 
 const IconWrapper = styled.span`
+  color: ${COLORS.gray500};
   position: absolute;
   margin: auto 0;
   pointer-events: none;
-  right: 16px;
-  top: 9px;
+  left: 0;
 `;
 
 const Input = styled.input`
@@ -49,6 +48,7 @@ const Input = styled.input`
   font-weight: bold;
   font-size: inherit;
   line-height: inherit;
+  padding-left: 24px;
 
   &::placeholder {
     color: ${COLORS.gray500};
