@@ -38,7 +38,7 @@ const IconInput = ({
       <IconWrapper>
         <Icon id={icon} size={ICON_SIZES[size]}/>
       </IconWrapper>
-      <Input id='{label}' type='text' placeholder={placeholder}/>
+      <Input id='{label}' width={width} type='text' placeholder={placeholder}/>
   </Wrapper>;
 };
 
@@ -74,6 +74,7 @@ const Input = styled.input`
   font-size: inherit;
   line-height: inherit;
   padding: 8px 2px 7px 36px;
+  width: ${ (props) => props.width + 'px' };
 
   &::placeholder {
     color: ${COLORS.gray500};
@@ -82,6 +83,5 @@ const Input = styled.input`
     line-height: inherit;
   }
 `;
-
 
 export default IconInput;
